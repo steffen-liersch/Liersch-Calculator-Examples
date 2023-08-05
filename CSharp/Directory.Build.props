@@ -1,0 +1,15 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>10</LangVersion>
+
+    <DebugType>portable</DebugType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <CheckForOverflowUnderflow Condition="'$(Configuration)'=='Debug'">true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+</Project>

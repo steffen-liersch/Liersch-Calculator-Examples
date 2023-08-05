@@ -1,0 +1,37 @@
+{
+  "folders": [
+    {
+      "name": "C# App",
+      "path": ".",
+    }
+  ],
+
+  "settings": {
+    // The following settings must be placed in the
+    // workspace file because they do not work in settings.json.
+    "json.format.enable": true,
+    "json.format.keepLines": true,
+
+    // Must be false for omnisharp.json to be considered (C# support)
+    "omnisharp.enableEditorConfigSupport": false,
+
+    // Project-specific files to exclude
+    "files.exclude": {
+      "**/.vs": true,
+      "**/bin": true,
+      "**/obj": true,
+      "**/TestResults": true,
+    },
+  },
+
+  "extensions": {
+    "recommendations": [
+      "adamvoss.vscode-languagetool",
+      "dotjoshjohnson.xml",
+      "formulahendry.dotnet-test-explorer",
+      "ms-dotnettools.csharp",
+      "sonarsource.sonarlint-vscode",
+      "streetsidesoftware.code-spell-checker",
+    ],
+  },
+}
