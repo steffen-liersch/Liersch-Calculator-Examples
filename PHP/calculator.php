@@ -33,7 +33,7 @@ final class Calculator
       return $token->asString;
 
     $s = $this->formatter->format($v);
-    return $v < 0 ? '(' . $s + ')' : $s;
+    return $v < 0 ? '(' . $s . ')' : $s;
   }
 
   public function calculateAndFormat(string $expression, string $stepPrefix = '= '): array
