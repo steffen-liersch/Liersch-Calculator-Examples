@@ -1,0 +1,19 @@
+{
+  // https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch current script in Console",
+      "type": "php",
+      "request": "launch",
+      "program": "${workspaceFolder}/program.php", // ${file}
+      "externalConsole": true,
+      "runtimeArgs": [
+        "-c",
+        "${workspaceFolder}/.vscode/php.ini",
+        "-dxdebug.mode=debug",
+        "-dxdebug.start_with_request=yes",
+      ],
+    }
+  ]
+}

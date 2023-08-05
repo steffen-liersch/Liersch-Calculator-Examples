@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "name": "PHP App",
+      "path": "."
+    }
+  ],
+
+  "settings": {
+    // The following settings must be placed in the
+    // workspace file because they do not work in settings.json.
+    "json.format.enable": true,
+    "json.format.keepLines": true,
+  },
+
+  "extensions": {
+    "recommendations": [
+      "devsense.phptools-vscode",
+      "xdebug.php-debug",
+      "sonarsource.sonarlint-vscode",
+      "streetsidesoftware.code-spell-checker",
+    ],
+  },
+}
