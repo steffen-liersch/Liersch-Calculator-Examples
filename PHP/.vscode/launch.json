@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch current script in Console",
+      "name": "Launch Program in Console",
       "type": "php",
       "request": "launch",
       "program": "${workspaceFolder}/program.php", // ${file}
