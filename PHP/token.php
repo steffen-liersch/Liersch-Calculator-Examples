@@ -11,6 +11,8 @@ require_once dirname(__FILE__) . '/default-format.php';
 
 final class Token
 {
+  // The following fields should be read-only.
+  // As of PHP 8.1.0, the readonly modifier is supported.
   public float|null $asNumber;
   public string $asString;
 

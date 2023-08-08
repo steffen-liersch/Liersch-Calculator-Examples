@@ -67,8 +67,8 @@ final class Calculator
 
   public function calculate(string $expression): float|null
   {
-    if ($expression === null)
-      throw new InvalidArgumentException('Unexpected expression');
+    if (!is_string($expression))
+      throw new InvalidArgumentException('String expected for expression');
 
     $this->isFirstStep = true;
     $this->steps = [];
@@ -90,11 +90,11 @@ final class Calculator
     if (count($this->matches) > 1)
       throw new CalculatorException('Operator expected instead of ' . $this->matches[1]->asString);
 
-    $m = $this->matches[0];
-    if ($m->asNumber === null)
+    $v = $this->matches[0]->asNumber;
+    if ($v === null)
       throw new UnexpectedValueException();
 
-    return $m->asNumber;
+    return $v;
   }
 
   private function calculateFrom(int $index): int
@@ -175,16 +175,16 @@ final class Calculator
     if ($index >= count($this->matches))
       throw new CalculatorException('Operator expected');
 
-    $m = $this->matches[$index]->asString;
-    if (strlen($m) == 1)
+    $s = $this->matches[$index]->asString;
+    if (strlen($s) == 1)
     {
-      $op = $m[0];
+      $op = $s[0];
       $i = strpos('+-*/%^', $op);
       if ($i !== false && $i >= 0)
         return $op;
     }
 
-    throw new CalculatorException('Operator expected instead of ' . $m);
+    throw new CalculatorException('Operator expected instead of ' . $s);
   }
 
   private function getValue(int $index): float

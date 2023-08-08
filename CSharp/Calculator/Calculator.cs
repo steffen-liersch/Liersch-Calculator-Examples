@@ -81,11 +81,11 @@ sealed class Calculator
     if(_matches.Count > 1)
       throw new CalculatorException("Operator expected instead of " + _matches[1].AsString);
 
-    Token m = _matches[0];
-    if(!m.AsNumber.HasValue)
+    double? v = _matches[0].AsNumber;
+    if(!v.HasValue)
       throw new InvalidOperationException();
 
-    return m.AsNumber;
+    return v.Value;
   }
 
   int CalculateFrom(int index)
@@ -162,15 +162,15 @@ sealed class Calculator
     if(index >= _matches.Count)
       throw new CalculatorException("Operator expected");
 
-    string m = _matches[index].AsString;
-    if(m.Length == 1)
+    string s = _matches[index].AsString;
+    if(s.Length == 1)
     {
-      char op = m[0];
+      char op = s[0];
       if("+-*/%^".IndexOf(op) >= 0)
         return op;
     }
 
-    throw new CalculatorException("Operator expected instead of " + m);
+    throw new CalculatorException("Operator expected instead of " + s);
   }
 
   double GetValue(int index)
