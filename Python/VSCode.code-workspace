@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "name": "Python App",
+      "path": "."
+    }
+  ],
+
+  "settings": {
+    // The following settings must be placed in the
+    // workspace file because they do not work in settings.json.
+    "json.format.enable": true,
+    "json.format.keepLines": true,
+
+    // Project-specific files to exclude
+    "files.exclude": {
+      "__pycache__": true,
+    },
+  },
+
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "sonarsource.sonarlint-vscode",
+      "streetsidesoftware.code-spell-checker",
+    ],
+  },
+}

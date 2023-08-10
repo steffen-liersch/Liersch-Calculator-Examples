@@ -1,0 +1,19 @@
+{
+  // https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Program in Console",
+      "type": "python",
+      "request": "launch",
+      "justMyCode": true,
+
+      "program": "${workspaceFolder}/program.py", // ${file}
+      "console": "integratedTerminal",
+
+      "windows": {
+        "console": "externalTerminal", // https://aka.ms/VSCode-CS-LaunchJson-Console
+      },
+    }
+  ]
+}

@@ -13,6 +13,7 @@ set args=%*
 
 pushd "%base%"
 
+call :run py "%base%Python\program.py" %suffix%
 call :run php "%base%PHP\program.php" %suffix%
 call :run dotnet run --project "%base%CSharp\Calculator" %suffix%
 
@@ -24,10 +25,7 @@ exit /B 1
 
 :run
 
-if not exist %1% (
-  where %1 >nul 2>&1
-  if not %ERRORLEVEL%==0 exit /B 1
-)
+where /Q %1 || exit /B 1
 
 if "%args%"=="" (
   echo.

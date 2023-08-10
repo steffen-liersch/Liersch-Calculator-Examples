@@ -17,6 +17,7 @@ popd
 pushd "%base%"
 
 call :run php "%base%PHP\tests.php" %suffix%
+call :run py "%base%Python\tests.py" %suffix%
 
 echo All the tests performed were successful.
 popd
