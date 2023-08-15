@@ -30,12 +30,12 @@ exit /B 0
 echo ================ Testing %1 ================
 echo.
 
-where %1 >nul 2>&1
-if not %ERRORLEVEL%==0 (echo %1 is not installed & echo. & echo. & exit /B 0)
+where /Q %1
+if not %ERRORLEVEL% == 0 (echo %1 is not installed & echo. & echo. & exit /B 0)
 
 echo ^> %*
-cmd /c %*
-if not %ERRORLEVEL%==0 exit /B 1
+cmd /C %*
+if not %ERRORLEVEL% == 0 exit /B 1
 
 echo.
 exit /B 0

@@ -25,12 +25,13 @@ exit /B 1
 
 :run
 
-where /Q %1 || exit /B 1
+where /Q %1
+if not %ERRORLEVEL% == 0 exit /B 1
 
-if "%args%"=="" (
+if "%args%" == "" (
   echo.
   echo ^> %* %args%
 )
 
-cmd /c %* %args%
+cmd /C %* %args%
 exit /B 0
