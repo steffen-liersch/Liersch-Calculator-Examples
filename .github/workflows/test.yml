@@ -1,0 +1,34 @@
+name: Automatic Unit Testing
+run-name: Automatic Unit Testing
+on: [push]
+jobs:
+  Unit Testing:
+    runs-on: windows-latest
+    steps:
+      - name: Workflow triggered by a ${{ github.event_name }} event
+        run: echo "Workflow triggered by a ${{ github.event_name }} event"
+
+      - name: Operating system is ${{ runner.os }}
+        run: echo "Operating system is ${{ runner.os }}"
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: 
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.4'
+
+      - name: Check out repository code from ${{ github.repository }}
+        uses: actions/checkout@v3
+
+      - run: cmd /C run-tests.bat
+      - run: echo "Job status is ${{ job.status }}"
