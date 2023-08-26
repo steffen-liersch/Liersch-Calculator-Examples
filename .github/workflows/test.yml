@@ -2,7 +2,7 @@ name: Automatic Unit Testing
 run-name: Automatic Unit Testing
 on: [push]
 jobs:
-  Unit Testing:
+  Unit-Testing:
     runs-on: windows-latest
     steps:
       - name: Workflow triggered by a ${{ github.event_name }} event
