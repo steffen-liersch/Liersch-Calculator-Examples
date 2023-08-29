@@ -52,7 +52,7 @@ static class Program
     }
   }
 
-  static void runWithArgs(string[] args)
+  static void RunWithArgs(string[] args)
   {
     var calculator = new Calculator();
     foreach(string a in args)
@@ -62,7 +62,7 @@ static class Program
   static void Main(string[] args)
   {
     if(args.Length > 0)
-      runWithArgs(args);
+      RunWithArgs(args);
     else RunUI();
   }
 }
