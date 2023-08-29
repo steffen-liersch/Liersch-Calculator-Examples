@@ -55,13 +55,14 @@
   "html.format.wrapLineLength": 160,
 
   // JavaScript
-  "javascript.preferences.quoteStyle": "single",
   "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
   "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
   "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
   "javascript.format.semicolons": "insert",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "javascript.preferences.quoteStyle": "single",
 
   // TypeScript
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
@@ -70,6 +71,8 @@
   "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
   "typescript.format.semicolons": "insert",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.quoteStyle": "single",
 
   // Python
   "python.analysis.typeCheckingMode": "strict",
