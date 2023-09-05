@@ -12,7 +12,9 @@
     "json.format.enable": true,
     "json.format.keepLines": true,
 
-    // Must be false for omnisharp.json to be considered (C# support)
+    // The following settings are required for
+    // omnisharp.json to be considered (C# support).
+    "dotnet.server.useOmnisharp": true,
     "omnisharp.enableEditorConfigSupport": false,
 
     // Project-specific files to exclude
