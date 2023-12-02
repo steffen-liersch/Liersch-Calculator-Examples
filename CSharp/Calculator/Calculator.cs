@@ -41,7 +41,7 @@ sealed class Calculator
       e = x.Message;
     }
 
-    IList<string> res = _steps
+    List<string> res = _steps
       .Select(x =>
         stepPrefix +
         string.Join("", x.Select(x => Format(x))))
@@ -58,8 +58,7 @@ sealed class Calculator
 
   public double? Calculate(string expression)
   {
-    if(expression == null)
-      throw new ArgumentNullException(nameof(expression));
+    ArgumentNullException.ThrowIfNull(expression);
 
     _isFirstStep = true;
     _steps.Clear();
