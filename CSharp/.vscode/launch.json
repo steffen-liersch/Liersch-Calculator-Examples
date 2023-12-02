@@ -15,17 +15,17 @@
       "stopAtEntry": false,
 
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/Calculator/bin/Debug/net7.0/Calculator.dll",
+      "program": "${workspaceFolder}/Calculator/bin/Debug/Calculator.dll",
       "console": "internalConsole",
 
       // Operating system specific settings
       "linux": {
         "console": "integratedTerminal", // https://aka.ms/VSCode-CS-LaunchJson-Console
-        "program": "${workspaceFolder}/Calculator/bin/Debug/net7.0/Calculator",
+        "program": "${workspaceFolder}/Calculator/bin/Debug/Calculator",
       },
       "windows": {
         "console": "externalTerminal", // https://aka.ms/VSCode-CS-LaunchJson-Console
-        "program": "${workspaceFolder}/Calculator/bin/Debug/net7.0/Calculator.exe",
+        "program": "${workspaceFolder}/Calculator/bin/Debug/Calculator.exe",
       },
     },
 
