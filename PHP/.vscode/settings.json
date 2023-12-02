@@ -14,8 +14,11 @@
   - JSON
   - JSONC
   - Julia
+  - Less
   - PHP
   - Python
+  - SASS
+  - SCSS
   - TypeScript
   - XML
 */
@@ -46,6 +49,22 @@
   "css.format.newlineBetweenRules": true,
   "css.format.newlineBetweenSelectors": false,
   "css.format.spaceAroundSelectorSeparator": true,
+
+  // Less
+  "less.completion.completePropertyWithSemicolon": true,
+  "less.format.braceStyle": "collapse",
+  "less.format.maxPreserveNewLines": 4,
+  "less.format.newlineBetweenRules": true,
+  "less.format.newlineBetweenSelectors": false,
+  "less.format.spaceAroundSelectorSeparator": true,
+
+  // SCSS
+  "scss.completion.completePropertyWithSemicolon": true,
+  "scss.format.braceStyle": "collapse",
+  "scss.format.maxPreserveNewLines": 4,
+  "scss.format.newlineBetweenRules": true,
+  "scss.format.newlineBetweenSelectors": false,
+  "scss.format.spaceAroundSelectorSeparator": true,
 
   // HTML
   "html.suggest.html5": true,
@@ -102,7 +121,7 @@
     "editor.defaultFormatter": "ms-dotnettools.csharp",
   },
 
-  "[css]": {
+  "[css][scss][less]": {
     "editor.defaultFormatter": "vscode.css-language-features",
   },
 
@@ -138,6 +157,10 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8",
     "editor.tabSize": 2, // Option --indent-size of property autopep8.args must have the same value!
+  },
+
+  "[sass]": {
+    "editor.defaultFormatter": "syler.sass-indented",
   },
 
   "[typescript]": {
