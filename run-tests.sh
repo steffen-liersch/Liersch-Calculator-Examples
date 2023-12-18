@@ -36,6 +36,7 @@ popd
 
 pushd "$base"
 
+run julia "$base/Julia/Tests.jl" || eval $suffix
 run php "$base/PHP/tests.php" || eval $suffix
 run python3 "$base/Python/tests.py" || eval $suffix
 

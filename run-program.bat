@@ -15,6 +15,7 @@ pushd "%base%"
 
 call :run py "%base%Python\program.py" %suffix%
 call :run php "%base%PHP\program.php" %suffix%
+call :run julia "%base%Julia\Program.jl" %suffix%
 call :run dotnet run --project "%base%CSharp\Calculator" %suffix%
 
 echo The program could not be started because no suitable runtime environment is installed.

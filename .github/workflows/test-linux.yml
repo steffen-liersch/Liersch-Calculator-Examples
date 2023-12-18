@@ -16,6 +16,14 @@ jobs:
         with:
           dotnet-version: 8.0
 
+      - name: Setup Juliu
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.9.4
+
+      - name: Setup Juliu package
+        run: echo 'import Pkg; Pkg.add("JSON")' | julia
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:

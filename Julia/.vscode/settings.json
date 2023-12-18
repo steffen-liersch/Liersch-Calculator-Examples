@@ -1,0 +1,184 @@
+/*--------------------------------------------------------------------------*\
+::
+::  Copyright © 2023 Steffen Liersch
+::  https://www.steffen-liersch.de/
+::
+\*--------------------------------------------------------------------------*/
+
+/*
+  This file contains common settings for the following programming languages:
+  - C#
+  - CSS
+  - HTML
+  - JavaScript
+  - JSON
+  - JSONC
+  - Julia
+  - Less
+  - PHP
+  - Python
+  - SASS
+  - SCSS
+  - TypeScript
+  - XML
+*/
+
+{
+  // Basic behaviour of the editor
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.quickSuggestions": {
+    "comments": "off",
+    "strings": "off",
+    "other": "off",
+  },
+
+  // Formatting settings for all languages
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.useTabStops": true,
+  "editor.tabSize": 2,
+
+  // CSS
+  "css.completion.completePropertyWithSemicolon": true,
+  "css.format.braceStyle": "collapse",
+  "css.format.maxPreserveNewLines": 4,
+  "css.format.newlineBetweenRules": true,
+  "css.format.newlineBetweenSelectors": false,
+  "css.format.spaceAroundSelectorSeparator": true,
+
+  // Less
+  "less.completion.completePropertyWithSemicolon": true,
+  "less.format.braceStyle": "collapse",
+  "less.format.maxPreserveNewLines": 4,
+  "less.format.newlineBetweenRules": true,
+  "less.format.newlineBetweenSelectors": false,
+  "less.format.spaceAroundSelectorSeparator": true,
+
+  // SCSS
+  "scss.completion.completePropertyWithSemicolon": true,
+  "scss.format.braceStyle": "collapse",
+  "scss.format.maxPreserveNewLines": 4,
+  "scss.format.newlineBetweenRules": true,
+  "scss.format.newlineBetweenSelectors": false,
+  "scss.format.spaceAroundSelectorSeparator": true,
+
+  // HTML
+  "html.suggest.html5": true,
+  "html.autoClosingTags": true,
+  "html.format.extraLiners": "",
+  "html.format.maxPreserveNewLines": 2,
+  "html.format.wrapLineLength": 160,
+
+  // JavaScript
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+  "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "javascript.format.semicolons": "insert",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "javascript.preferences.quoteStyle": "single",
+
+  // TypeScript
+  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+  "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "typescript.format.semicolons": "insert",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.quoteStyle": "single",
+
+  // Python
+  "python.analysis.typeCheckingMode": "strict",
+  "autopep8.args": [
+    // E265: Add space after comment hash
+    // E302: Add missing 2 blank lines
+    // E701: Put colon-separated compound statement on separate lines
+    "--ignore=E265, E701",
+    "--indent-size=2", // Property editor.tabSize in the [python] section must have the same value!
+    "--max-line-length=160",
+  ],
+
+  // XML
+  "xmlTools.splitAttributesOnFormat": false,
+  "xmlTools.splitXmlnsOnFormat": false,
+
+  //--------------------------------
+
+  // Settings for all file types
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+
+  //--------------------------------
+
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+  },
+
+  "[css][scss][less]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+  },
+
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "files.insertFinalNewline": false,
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "files.insertFinalNewline": false,
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "files.insertFinalNewline": false,
+  },
+
+  "[julia]": {
+    "editor.defaultFormatter": "julialang.language-julia",
+  },
+
+  "[php]": {
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode",
+    // Add the following entry in settings.json for the user:
+    // "php.format.codeStyle": "PHP Tools",
+  },
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.tabSize": 2, // Option --indent-size of property autopep8.args must have the same value!
+  },
+
+  "[sass]": {
+    "editor.defaultFormatter": "syler.sass-indented",
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+  },
+
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml",
+    "files.insertFinalNewline": false,
+  },
+
+  //--------------------------------
+
+  // Spell check (streetsidesoftware.code-spell-checker)
+  "cSpell.ignoreWords": [
+    "Steffen",
+    "Liersch",
+    "groupable",
+    "loopable",
+  ],
+}

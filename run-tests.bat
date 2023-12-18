@@ -16,6 +16,7 @@ popd
 
 pushd "%base%"
 
+call :run julia "%base%Julia\Tests.jl" %suffix%
 call :run php "%base%PHP\tests.php" %suffix%
 call :run py "%base%Python\tests.py" %suffix%
 

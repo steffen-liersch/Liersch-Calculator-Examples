@@ -1,0 +1,15 @@
+{
+  // https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Program in Console",
+      "type": "julia",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "juliaEnv": "${command:activeJuliaEnvironment}",
+      "program": "${workspaceFolder}/program.jl", // ${file}
+      "stopOnEntry": false,
+    },
+  ]
+}
