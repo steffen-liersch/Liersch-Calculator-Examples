@@ -10,7 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{8D16C949-5DB9-4540-9B0B-E6139BD58A29}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
-		README.md = README.md
 		..\Unit-Testing\tests.json = ..\Unit-Testing\tests.json
 	EndProjectSection
 EndProject
