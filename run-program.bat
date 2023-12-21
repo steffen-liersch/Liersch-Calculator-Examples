@@ -7,9 +7,16 @@
 
 @echo off
 
+::       | The leading space is important to work around a
+::       | bug at %args:"=% if no parameters are specified!
+set args= %*
+goto main
+
+
+:main
+
 set suffix= ^&^& (popd ^& exit /B 0)
 set base=%~dp0
-set args=%*
 
 pushd "%base%"
 
@@ -27,11 +34,15 @@ exit /B 1
 :run
 
 where /Q %1
-if not %ERRORLEVEL% == 0 exit /B 1
+if not %ERRORLEVEL%==0 exit /B 1
+goto run_no_check
 
-if "%args%" == "" (
+
+:run_no_check
+
+if "%args:"=%"==" " (
   echo.
-  echo ^> %* %args%
+  echo ^> %*
 )
 
 cmd /C %* %args%

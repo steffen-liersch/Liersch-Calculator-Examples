@@ -7,7 +7,24 @@
 #:
 #:----------------------------------------------------------------------------
 
-pause(){
+main() {
+  suffix='echo "Test failed"; popd > /dev/null; pause; exit 1'
+  base=$(readlink -f "$(dirname "$0")")
+
+  pushd "$base" > /dev/null
+
+  run dotnet test "$base/CSharp" || eval $suffix
+  run julia "$base/Julia/Tests.jl" || eval $suffix
+  run php "$base/PHP/tests.php" || eval $suffix
+  run python3 "$base/Python/tests.py" || eval $suffix
+
+  echo "All the tests performed were successful."
+  popd > /dev/null
+  pause
+  exit 0
+}
+
+pause() {
   read -p "[Press any key!] "
 }
 
@@ -27,20 +44,4 @@ run() {
   return 0
 }
 
-suffix='echo "Test failed"; popd; pause; exit 1'
-base=$(readlink -f "$(dirname "$0")")
-
-pushd "$base/CSharp/Calculator.Tests"
-run dotnet test || eval $suffix
-popd
-
-pushd "$base"
-
-run julia "$base/Julia/Tests.jl" || eval $suffix
-run php "$base/PHP/tests.php" || eval $suffix
-run python3 "$base/Python/tests.py" || eval $suffix
-
-echo "All the tests performed were successful."
-popd
-pause
-exit 0
+main
