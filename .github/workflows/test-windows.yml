@@ -11,26 +11,26 @@ jobs:
       - name: Operating system is ${{ runner.os }}
         run: echo ""
 
-      - name: Setup .NET
+      - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0
 
-      - name: Setup Juliu
+      - name: Set up Julia
         uses: julia-actions/setup-julia@v1
         with:
           version: 1.9.4
 
-      - name: Setup Juliu package
+      - name: Set up Julia package
         run: echo 'import Pkg; Pkg.add("JSON")' | julia
 
-      - name: Setup PHP
+      - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
           extensions: 
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11.4
