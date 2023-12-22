@@ -8,13 +8,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json.Nodes;
+using Liersch.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Liersch.Calculator.Tests;
 
 [TestClass]
-public sealed class CalculatorTests2
+public sealed class CalculatorTests
 {
   [TestMethod]
   public void PerformTests()
@@ -23,11 +23,10 @@ public sealed class CalculatorTests2
     int errorCount = 0;
     var calculator = new Calculator(new FloatFormatter("G"));
     string json = Helpers.LoadTests();
-    JsonArray tests = JsonNode.Parse(json)!.AsArray();
-    foreach(JsonNode? node in tests)
+    var tests = JsonNode.Parse(json);
+    foreach(JsonNode test in tests)
     {
-      JsonObject test = node!.AsObject();
-      Console.WriteLine("Test: " + test["name"]);
+      Console.WriteLine("Test: " + test["name"].AsString);
       IList<string> output = ToStringArray(test["output"]);
       IList<string> array = ToStringArray(test["expression"]);
       foreach(string expr in array)
@@ -44,14 +43,11 @@ public sealed class CalculatorTests2
       Assert.Fail();
   }
 
-  static IList<string> ToStringArray(JsonNode? node)
+  static IList<string> ToStringArray(JsonNode node)
   {
-    if(node == null)
-      throw new ArgumentNullException(nameof(node));
+    if(node.IsArray)
+      return node.Select(x => x.AsString).ToList();
 
-    if(node is JsonArray a)
-      return a.Select(x => x != null ? x.ToString() : "").ToList();
-
-    return new string[] { node.ToString() };
+    return new string[] { node.AsString };
   }
 }
