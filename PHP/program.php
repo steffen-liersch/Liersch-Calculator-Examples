@@ -10,7 +10,7 @@ namespace Liersch\Calculator;
 
 require_once dirname(__FILE__) . '/calculator.php';
 
-function runUI()
+function runUI(): void
 {
   echo "\n";
   echo "Liersch Calculator (PHP)\n";
@@ -48,7 +48,7 @@ function runUI()
   }
 }
 
-function runWithArgs(array $args)
+function runWithArgs(array $args): void
 {
   $calculator = new Calculator();
   foreach ($args as $a)
