@@ -39,7 +39,7 @@ final class Token
           $this->asString = 'E';
           break;
 
-        case "PI":
+        case 'PI':
           $this->asNumber = M_PI;
           $this->asString = 'PI';
           break;

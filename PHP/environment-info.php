@@ -6,7 +6,7 @@
 ::
 \*--------------------------------------------------------------------------*/
 
-function showEnvironmentInfo()
+function showEnvironmentInfo(): void
 {
   echo str_repeat('-', 64) . "\n";
   echo 'Configuration   : ' . php_ini_loaded_file() . "\n";

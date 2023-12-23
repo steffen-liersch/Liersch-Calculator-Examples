@@ -28,9 +28,9 @@
 
   "extensions": {
     "recommendations": [
-      "adamvoss.vscode-languagetool",
       "dotjoshjohnson.xml",
       "formulahendry.dotnet-test-explorer",
+      //"ms-dotnettools.csdevkit",
       "ms-dotnettools.csharp",
       "sonarsource.sonarlint-vscode",
       "streetsidesoftware.code-spell-checker",
