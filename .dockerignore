@@ -1,0 +1,10 @@
+.dockerignore
+**/docker*
+**/*.bat
+**/.svn
+**/.vs
+**/bin
+**/obj
+**/target
+**/TestResults
+**/_*
