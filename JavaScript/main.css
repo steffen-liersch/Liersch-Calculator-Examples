@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------------------*\
+::
+::  Copyright © 2023 Steffen Liersch
+::  https://www.steffen-liersch.de/
+::
+\*--------------------------------------------------------------------------*/
+
+body {
+  margin: 0;
+}
+
+html, input, pre {
+  background: #ddd;
+  color: #000;
+  font: 16pt Verdana, Tahoma, sans-serif;
+  line-height: 1.5em;
+}
+
+#calculator {
+  margin: 0 auto;
+  width: 20em;
+}
+
+#editor {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background: #fff;
+  margin: 0.5em 0;
+  padding: 0.3em;
+  outline: none;
+  border-radius: 0.2em;
+  border: 0;
+}
+
+#result {
+  font-size: 0.7em;
+}

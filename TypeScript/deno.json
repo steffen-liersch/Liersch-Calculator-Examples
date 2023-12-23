@@ -1,0 +1,15 @@
+{
+  "__comments": [
+    "https://deno.land/manual@v1.35.3/getting_started/configuration_file",
+    "https://deno.land/manual@v1.35.3/advanced/typescript/configuration"
+  ],
+  "lint": {
+    "include": [ "./" ],
+    "exclude": [ ],
+    "rules": {
+      "tags": [ "recommended" ],
+      "include": [ "ban-untagged-todo" ],
+      "exclude": [ "prefer-const" ]
+    }
+  }
+}

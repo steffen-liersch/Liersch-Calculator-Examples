@@ -1,0 +1,292 @@
+[
+  {
+    "name": "Empty",
+    "expression": [
+      "",
+      " ",
+      "    "
+    ],
+    "output": [
+    ]
+  },
+
+  {
+    "name": "Zero",
+    "expression": [
+      "0",
+      "0 ",
+      " 0",
+      " 0 ",
+      "00",
+      "000",
+      "0000",
+      "00000",
+      "0.0",
+      "0.00",
+      "0.000",
+      "0.0000",
+      "0.00000",
+      "00000.00000"
+    ],
+    "output": [
+      "0"
+    ]
+  },
+
+  {
+    "name": "E",
+    "expression": [
+      "e",
+      "+e",
+      "(+e)",
+      "+(e)",
+      "+(+e)",
+      "E",
+      "+E",
+      "(+E)",
+      "+(E)",
+      "+(+E)",
+      "2.718281828459045"
+    ],
+    "output": [
+      "2.718281828459045"
+    ]
+  },
+
+  {
+    "name": "PI",
+    "expression": [
+      "pi",
+      "+pi",
+      "(+pi)",
+      "+(pi)",
+      "+(+pi)",
+      "PI",
+      "+PI",
+      "(+PI)",
+      "+(PI)",
+      "+(+PI)",
+      "Pi",
+      "pI",
+      "3.141592653589793"
+    ],
+    "output": [
+      "3.141592653589793"
+    ]
+  },
+
+  {
+    "name": "3",
+    "expression": [
+      "1+2",
+      " 1+2",
+      "1+2 ",
+      "1 +2",
+      "1+ 2",
+      " 1+2 ",
+      " 1 + 2 ",
+      "(1+2)",
+      "( 1+2)",
+      "(1+2 )",
+      "(1 +2)",
+      "(1+ 2)",
+      "(1 + 2)",
+      "( 1 + 2 )",
+      " ( 1 + 2 ) ",
+      "3",
+      "+3",
+      "(3)",
+      "+(3)",
+      "(+3)",
+      "+(+3)",
+      "((3))",
+      "(+(3))",
+      "((+3))",
+      "((+(3)))",
+      "-(-3)"
+    ],
+    "output": [
+      "3"
+    ]
+  },
+
+  {
+    "name": "46",
+    "expression": [
+      "12+34",
+      "(12+34)",
+      "46",
+      "+46",
+      "(46)",
+      "(+46)",
+      "+(46)",
+      "+(+46)",
+      "-(-46)"
+    ],
+    "output": [
+      "46"
+    ]
+  },
+
+  {
+    "name": "Simple operators with a parenthesised term",
+    "expression": [
+      "1+2*(3+4)",
+      "1+2*(0+7)",
+      "1+2*(7+0)",
+      "1+2*(10-3)",
+      "1+2*(+10-3)",
+      "1+2*(-8+15)",
+      "1+2*(7*1)",
+      "1+2*(7/1)"
+    ],
+    "output": [
+      "1+2*7",
+      "1+14",
+      "15"
+    ]
+  },
+
+  {
+    "name": "Simple operators with two parenthesised terms",
+    "expression": [
+      "(100+0)-(-50-50)",
+      "(0+100)-(-50-50)",
+      "(-1+101)-(-50-50)",
+      "(101-1)-(-50-50)",
+      "(1+99)-(-50-50)",
+      "(99+1)-(-50-50)",
+      "(80+20)-(-50-50)",
+      "(20+30+50)-(-50-50)",
+      "(20+100-10-10)-(-50-50)",
+      "(50+50)-(-50-50)"
+    ],
+    "output": [
+      "100-(-50-50)",
+      "100-(-100)",
+      "200"
+    ]
+  },
+
+  {
+    "name": "Sign and power operator",
+    "expression": [
+      "-2^8",
+      "-(2^8)",
+      "-(-(-2^8))",
+      "-65536^0.5",
+      "-(65536^0.5)",
+      "+(-(65536^0.5))",
+      "-(+(65536^0.5))",
+      "-(+65536^0.5)",
+      "-256",
+      "-  256",
+      "-(+256)",
+      "-(-(-256))"
+    ],
+    "output": [
+      "-256"
+    ]
+  },
+
+  {
+    "name": "Number expected",
+    "expression": [
+      "1+",
+      "1+(",
+      "E+",
+      "E+("
+    ],
+    "output": [
+      "Number expected"
+    ]
+  },
+
+  {
+    "name": "Number expected instead of +",
+    "expression": [
+      "1++",
+      "E++"
+    ],
+    "output": [
+      "Number expected instead of +"
+    ]
+  },
+
+  {
+    "name": "Number expected instead of *",
+    "expression": [
+      "1+*",
+      "E+*",
+      "*E",
+      "*E/123",
+      "(1+2)/*"
+    ],
+    "output": [
+      "Number expected instead of *"
+    ]
+  },
+
+  {
+    "name": "Number expected instead of UNDEFINED",
+    "expression": [
+      "123*UNDEFINED",
+      "UNDEFINED*123",
+      "UNDEFINED/123",
+      "UNDEFINED/123+100",
+      "100+UNDEFINED/123",
+      "100*(200+UNDEFINED)",
+      "100*(200+UNDEFINED+300)"
+    ],
+    "output": [
+      "Number expected instead of UNDEFINED"
+    ]
+  },
+
+  {
+    "name": "Operator expected instead of ;",
+    "expression": [
+      "1;2",
+      "E;PI"
+    ],
+    "output": [
+      "Operator expected instead of ;"
+    ]
+  },
+
+  {
+    "name": "Operator expected instead of )",
+    "expression": [
+      "1+2)",
+      "(1+2+3))"
+    ],
+    "output": [
+      "Operator expected instead of )"
+    ]
+  },
+
+  {
+    "name": "Operator expected instead of 123",
+    "expression": [
+      "2+4 123",
+      "2+4+6 123",
+      "(2+4+6) 123"
+    ],
+    "output": [
+      "Operator expected instead of 123"
+    ]
+  },
+
+  {
+    "name": "Missing closing brace",
+    "expression": [
+      "(1",
+      "(1+2",
+      "(1+2+3",
+      "1+2/(3+4"
+    ],
+    "output": [
+      "Missing closing brace"
+    ]
+  }
+]

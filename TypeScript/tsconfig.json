@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "allowImportingTsExtensions": true,
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+  },
+  "include": [
+    "**/*.ts",
+  ],
+  "exclude": [
+  ],
+}

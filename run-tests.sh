@@ -13,6 +13,9 @@ main() {
 
   pushd "$base" > /dev/null
 
+  run node --no-warnings "$base/JavaScript/tests.js" || eval $suffix
+  run deno run "$base/JavaScript/tests.js" || eval $suffix
+  run deno run "$base/TypeScript/tests.ts" || eval $suffix
   run dotnet test "$base/CSharp" || eval $suffix
   run julia "$base/Julia/Tests.jl" || eval $suffix
   run php "$base/PHP/tests.php" || eval $suffix

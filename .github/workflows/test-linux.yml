@@ -11,6 +11,16 @@ jobs:
       - name: Operating system is ${{ runner.os }}
         run: echo ""
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.10.0
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: 1.39.0
+
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:

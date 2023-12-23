@@ -15,6 +15,9 @@ main() {
 
   pushd "$base" > /dev/null
 
+  run node "$base/JavaScript/program.js" && eval $suffix
+  run deno run "$base/JavaScript/program.js" && eval $suffix
+  run deno run "$base/TypeScript/program.ts" && eval $suffix
   run python3 "$base/Python/program.py" && eval $suffix
   run php "$base/PHP/program.php" && eval $suffix
   run julia "$base/Julia/Program.jl" && eval $suffix

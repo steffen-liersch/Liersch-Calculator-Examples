@@ -1,0 +1,27 @@
+{
+  // https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Program in Console",
+      "type": "node",
+      "request": "launch",
+
+      "attachSimplePort": 9229,
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "run",
+        "--inspect-wait",
+        "--allow-all",
+      ],
+
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/program.ts",
+      "console": "integratedTerminal",
+
+      "windows": {
+        "console": "externalTerminal", // https://aka.ms/VSCode-CS-LaunchJson-Console
+      },
+    }
+  ]
+}

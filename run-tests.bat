@@ -15,6 +15,9 @@ set base=%~dp0
 
 pushd "%base%"
 
+call :run node --no-warnings "%base%JavaScript\tests.js" %suffix%
+call :run deno run "%base%JavaScript\tests.js" %suffix%
+call :run deno run "%base%TypeScript\tests.ts" %suffix%
 call :run dotnet test "%base%CSharp" %suffix%
 call :run julia "%base%Julia\Tests.jl" %suffix%
 call :run php "%base%PHP\tests.php" %suffix%

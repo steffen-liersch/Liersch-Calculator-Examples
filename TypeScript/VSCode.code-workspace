@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "name": "TypeScript App",
+      "path": "."
+    }
+  ],
+
+  "settings": {
+    // The following settings must be placed in the
+    // workspace file because they do not work in settings.json.
+    "json.format.enable": true,
+    "json.format.keepLines": true,
+
+    "deno.enable": true,
+    "deno.lint": true,
+  },
+
+  "extensions": {
+    "recommendations": [
+      "denoland.vscode-deno",
+      "sonarsource.sonarlint-vscode",
+      "streetsidesoftware.code-spell-checker",
+    ],
+  },
+}
