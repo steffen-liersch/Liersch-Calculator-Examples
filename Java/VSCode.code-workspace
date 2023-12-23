@@ -1,0 +1,34 @@
+{
+  "folders": [
+    {
+      "name": "Java App",
+      "path": "."
+    }
+  ],
+
+  "settings": {
+    // The following settings must be placed in the
+    // workspace file because they do not work in settings.json.
+    "json.format.enable": true,
+    "json.format.keepLines": true,
+    "java.format.settings.url": ".vscode/java-formatter.xml",
+
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "maven.view": "flat",
+
+    // Project-specific files to exclude
+    "files.exclude": {
+      "_out": true,
+      "target": true,
+      "*.bat": true,
+      "**/*.class": true,
+    },
+  },
+
+  "extensions": {
+    "recommendations": [
+      "dotjoshjohnson.xml",
+      "vscjava.vscode-java-pack",
+    ],
+  },
+}

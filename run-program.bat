@@ -26,6 +26,8 @@ call :run php "%base%PHP\program.php" %suffix%
 call :run julia "%base%Julia\Program.jl" %suffix%
 call :run dotnet run --project "%base%CSharp\Calculator" %suffix%
 
+if exist "%JAVA_HOME%\bin" call :run_no_check "%base%Java\build-and-run.bat" %suffix%
+
 :: Try with Deno last, because there is currently a problem in the prompt-function (seen on Windows 11)
 call :run deno run "%base%TypeScript\program.ts" %suffix%
 call :run deno run "%base%JavaScript\program.js" %suffix%

@@ -11,6 +11,10 @@ main() {
   suffix='echo "Test failed"; popd > /dev/null; pause; exit 1'
   base=$(readlink -f "$(dirname "$0")")
 
+  pushd "$base/Java" > /dev/null
+  run mvn --quiet package || eval $suffix
+  popd > /dev/null
+
   pushd "$base" > /dev/null
 
   run node --no-warnings "$base/JavaScript/tests.js" || eval $suffix

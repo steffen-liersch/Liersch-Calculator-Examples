@@ -23,6 +23,8 @@ main() {
   run julia "$base/Julia/Program.jl" && eval $suffix
   run dotnet run --project "$base/CSharp/Calculator" && eval $suffix
 
+  if [ -d "$JAVA_HOME/bin" ]; then run_no_check "$base/Java/build-and-run.sh" && eval $suffix; fi
+
   echo "The program could not be started because no suitable runtime environment is installed."
   popd > /dev/null
   pause
