@@ -20,7 +20,8 @@ using JSON
 function runtests()::Bool
   println()
   n = joinpath(dirname(@__FILE__), "../Unit-Testing/tests.json")
-  ok = performtests(JSON.parsefile(n))
+  tests = JSON.parsefile(n)
+  ok = performtests(tests)
   println()
   return ok
 end
