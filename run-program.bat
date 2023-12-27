@@ -18,6 +18,10 @@ goto main
 set suffix= ^&^& (popd ^& exit /B 0)
 set base=%~dp0
 
+pushd "%base%\Go"
+call :run go run . %suffix%
+popd
+
 pushd "%base%"
 
 call :run node "%base%JavaScript\program.js" %suffix%

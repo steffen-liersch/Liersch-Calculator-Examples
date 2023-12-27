@@ -13,6 +13,10 @@ main() {
   suffix='popd > /dev/null; exit 0'
   base=$(readlink -f "$(dirname "$0")")
 
+  pushd "$base/Go" > /dev/null
+  run go run . && eval $suffix
+  popd > /dev/null
+
   pushd "$base" > /dev/null
 
   run node "$base/JavaScript/program.js" && eval $suffix

@@ -13,6 +13,10 @@ goto main
 set suffix= ^|^| (echo Test failed ^& popd ^& pause ^& exit /B 1)
 set base=%~dp0
 
+pushd "%base%Go"
+call :run go test %suffix%
+popd
+
 pushd "%base%Java"
 call :run mvn --quiet package %suffix%
 popd
