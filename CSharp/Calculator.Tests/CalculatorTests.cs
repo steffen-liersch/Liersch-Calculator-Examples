@@ -32,7 +32,7 @@ public sealed class CalculatorTests
       foreach(string expr in array)
       {
         IList<string> lines = calculator.CalculateAndFormat(expr, "");
-        if(!Helpers.AssertEqual(output, lines))
+        if(!AssertEqual(output, lines))
           errorCount++;
         testCount++;
       }
@@ -41,6 +41,28 @@ public sealed class CalculatorTests
 
     if(errorCount > 0)
       Assert.Fail();
+  }
+
+  static bool AssertEqual(IList<string> expected, IList<string> actual)
+  {
+    int c1 = expected.Count;
+    int c2 = actual.Count;
+    if(c1 != c2)
+    {
+      Console.WriteLine("Assertion failed: Arrays with different lengths");
+      return false;
+    }
+
+    for(int i = 0; i < c1; i++)
+    {
+      if(expected[i] != actual[i])
+      {
+        Console.WriteLine($"Assertion failed ({expected[i]}, {actual[i]}");
+        return false;
+      }
+    }
+
+    return true;
   }
 
   static IList<string> ToStringArray(JsonNode node)
