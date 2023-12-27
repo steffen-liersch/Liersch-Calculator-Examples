@@ -60,8 +60,8 @@ final class Calculator
 
     var res = new ArrayList<String>();
     _steps.stream()
-        .map(p -> stepPrefix + p.stream().map(x -> format(x)).collect(Collectors.joining("")))
-        .forEach(z -> res.add(z));
+        .map(p -> stepPrefix + p.stream().map(this::format).collect(Collectors.joining("")))
+        .forEach(res::add);
 
     if(v != null)
       res.add(stepPrefix + _formatter.format(v));
