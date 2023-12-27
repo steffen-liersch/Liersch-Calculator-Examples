@@ -60,7 +60,7 @@ public final class CalculatorTests
       if(!expected.get(i).equals(actual.get(i)))
       {
         System.out.println(
-            MessageFormat.format("Assertion failed ({0}, {1}", expected.get(i), actual.get(i)));
+            MessageFormat.format("Assertion failed ({0}, {1})", expected.get(i), actual.get(i)));
         return false;
       }
     }
