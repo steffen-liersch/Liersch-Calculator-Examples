@@ -9,24 +9,17 @@ export { FloatFormatter };
 
 class FloatFormatter
 {
-  constructor(arg)
+  constructor(precision = 6)
   {
-    if(typeof arg == 'object')
-      this._format = arg;
-    else this._format = createFormat(typeof arg == 'number' ? arg : 6);
+    this._precision = precision;
   }
 
-  format(value) { return this._format.format(value); }
+  format(value)
+  {
+    return value.toPrecision(this._precision)
+      .replace(/e/, 'E')
+      .replace(/\.?0+($|(?=E))/, '');
+  }
 
-  _format;
-}
-
-function createFormat(maximumSignificantDigits)
-{
-  return new Intl.NumberFormat('en-US', {
-    notation: 'standard',
-    style: 'decimal',
-    useGrouping: false,
-    maximumSignificantDigits,
-  });
+  _precision;
 }
