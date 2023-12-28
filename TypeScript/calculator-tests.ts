@@ -54,7 +54,7 @@ function assertEqual(expected: string[], actual: string[]): boolean
   {
     if(expected[i] != actual[i])
     {
-      console.error('Assertion failed', expected[i], actual[i]);
+      console.error('Assertion failed', expected, actual);
       return false;
     }
   }

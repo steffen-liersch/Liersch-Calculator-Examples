@@ -57,7 +57,7 @@ public sealed class CalculatorTests
     {
       if(expected[i] != actual[i])
       {
-        Console.WriteLine($"Assertion failed ({expected[i]}, {actual[i]}");
+        Console.WriteLine($"Assertion failed: {expected[i]} != {actual[i]}");
         return false;
       }
     }

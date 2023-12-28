@@ -43,7 +43,7 @@ func assertEqual(expected []string, actual []string) bool {
 
 	for i := 0; i < c1; i++ {
 		if expected[i] != actual[i] {
-			fmt.Println("Assertion failed", expected[i], actual[i])
+			fmt.Println("Assertion failed", expected, actual)
 			return false
 		}
 	}

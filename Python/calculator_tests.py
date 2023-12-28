@@ -38,7 +38,7 @@ def assert_equal(expected: List[str], actual: List[str]) -> bool:
 
   ok = all([a == b for a, b in zip(actual, expected)])
   if not ok:
-    print('Assertion failed')
+    print('Assertion failed', expected, actual)
     return False
 
   return True

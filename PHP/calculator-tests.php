@@ -52,7 +52,7 @@ function assertEqual(array &$expected, array &$actual): bool
   {
     if ($expected[$i] != $actual[$i])
     {
-      echo "Assertion failed: {$expected[$i]} != {$actual[$i]})\n";
+      echo "Assertion failed: {$expected[$i]} != {$actual[$i]}\n";
       return false;
     }
   }
