@@ -18,9 +18,9 @@ final class FloatFormatter
     this(6);
   }
 
-  public FloatFormatter(int maximumSignificantDigits)
+  public FloatFormatter(int precision)
   {
-    _format = new DecimalFormat("0." + "#".repeat(maximumSignificantDigits - 1),
+    _format = new DecimalFormat("0." + "#".repeat(precision - 1),
         DecimalFormatSymbols.getInstance(Locale.US));
   }
 
