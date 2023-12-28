@@ -18,7 +18,7 @@ type test struct {
 func performTests(tests []test) bool {
 	testCount := 0
 	errorCount := 0
-	calculator := CreateCalculator(CreateFloatFormatter("%g"))
+	calculator := CreateCalculator(CreateFloatFormatter("%G"))
 	for _, test := range tests {
 		fmt.Printf("Test: %s\n", test.Name)
 		for _, expr := range test.Expression {

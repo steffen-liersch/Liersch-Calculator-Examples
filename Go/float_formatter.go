@@ -20,7 +20,7 @@ func CreateFloatFormatter(format string) *FloatFormatter {
 func (x *FloatFormatter) Format(value float64) string {
 	f := x._format
 	if f == "" {
-		f = "%.6g"
+		f = "%.6G"
 	}
 	return fmt.Sprintf(f, value)
 }
