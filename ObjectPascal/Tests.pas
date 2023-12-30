@@ -7,6 +7,8 @@
 
 {$I Options.inc}
 
+{$APPTYPE CONSOLE}
+
 program Tests;
 
 uses
