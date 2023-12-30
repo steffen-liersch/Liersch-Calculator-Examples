@@ -1,0 +1,39 @@
+{
+  "folders": [
+    {
+      "name": "Object Pascal App",
+      "path": "."
+    }
+  ],
+
+  "settings": {
+    // The following settings must be placed in the
+    // workspace file because they do not work in settings.json.
+    "json.format.enable": true,
+    "json.format.keepLines": true,
+
+    // Project-specific files to exclude
+    "files.exclude": {
+      "_out": true,
+      "*.bak": true,
+      "*.err": true,
+      "*.exe": true,
+      "*.o": true,
+      "*.out": true,
+      "*.ppu": true,
+    },
+
+    // An absolute path is expected (TODO)
+    "fpctoolkit.format.cfgpath": ".../.vscode/JCFSettings.cfg",
+  },
+
+  "extensions": {
+    "recommendations": [
+      "coolchyni.fpctoolkit",
+      "sonarsource.sonarlint-vscode",
+      "streetsidesoftware.code-spell-checker",
+      "webfreak.debug",
+      "Wosi.omnipascal",
+    ],
+  },
+}
