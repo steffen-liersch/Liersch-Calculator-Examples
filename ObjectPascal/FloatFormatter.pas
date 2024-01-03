@@ -1,6 +1,6 @@
 (*--------------------------------------------------------------------------*]
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 [*--------------------------------------------------------------------------*)
@@ -12,7 +12,7 @@ unit FloatFormatter;
 interface
 
 uses
-  StrUtils, SysUtils, Windows,
+  StrUtils, SysUtils,
   DefaultFormat;
 
 type
