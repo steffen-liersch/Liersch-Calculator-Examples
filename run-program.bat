@@ -1,15 +1,13 @@
 ::----------------------------------------------------------------------------
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 ::----------------------------------------------------------------------------
 
 @echo off
 
-::       | The leading space is important to work around a
-::       | bug at %args:"=% if no parameters are specified!
-set args= %*
+set args=%*
 goto main
 
 
@@ -18,43 +16,48 @@ goto main
 set suffix= ^&^& (popd ^& exit /B 0)
 set base=%~dp0
 
-pushd "%base%\Go"
-call :run go run . %suffix%
-popd
 
 pushd "%base%"
 
-call :run node "%base%JavaScript\program.js" %suffix%
-call :run py "%base%Python\program.py" %suffix%
-call :run php "%base%PHP\program.php" %suffix%
-call :run julia "%base%Julia\Program.jl" %suffix%
-call :run dotnet run --project "%base%CSharp\Calculator" %suffix%
+call :try node "%base%JavaScript\program.js" %suffix%
+call :try py "%base%Python\program.py" %suffix%
+call :try php "%base%PHP\program.php" %suffix%
+call :try julia "%base%Julia\Program.jl" %suffix%
+call :try dotnet run --project "%base%CSharp\Calculator" %suffix%
 
-if exist "%JAVA_HOME%\bin" call :run_no_check "%base%Java\build-and-run.bat" %suffix%
+where /Q fpc && call :run "%base%ObjectPascal\build-and-run.bat" %suffix%
+if exist "%JAVA_HOME%\bin" call :run "%base%Java\build-and-run.bat" %suffix%
 
 :: Try with Deno last, because there is currently a problem in the prompt-function (seen on Windows 11)
-call :run deno run "%base%TypeScript\program.ts" %suffix%
-call :run deno run "%base%JavaScript\program.js" %suffix%
+call :try deno run "%base%TypeScript\program.ts" %suffix%
+call :try deno run "%base%JavaScript\program.js" %suffix%
+
+popd
+
+
+pushd "%base%\Go"
+call :try go run . %suffix%
+popd
+
 
 echo The program could not be started because no suitable runtime environment is installed.
-popd
 pause
 exit /B 1
 
 
-:run
+:try
 
 where /Q %1
 if not %ERRORLEVEL%==0 exit /B 1
-goto run_no_check
+goto run
 
 
-:run_no_check
+:run
 
-if "%args:"=%"==" " (
+if "%args%"=="" (
   echo.
   echo ^> %*
 )
 
-cmd /C %* %args%
+cmd /C %* %args% 
 exit /B 0

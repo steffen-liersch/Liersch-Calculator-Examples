@@ -2,7 +2,7 @@
 
 #:----------------------------------------------------------------------------
 #:
-#:  Copyright © 2023 Steffen Liersch
+#:  Copyright © 2023-2024 Steffen Liersch
 #:  https://www.steffen-liersch.de/
 #:
 #:----------------------------------------------------------------------------
@@ -13,39 +13,40 @@ main() {
   suffix='popd > /dev/null; exit 0'
   base=$(readlink -f "$(dirname "$0")")
 
-  pushd "$base/Go" > /dev/null
-  run go run . && eval $suffix
-  popd > /dev/null
 
   pushd "$base" > /dev/null
 
-  run node "$base/JavaScript/program.js" && eval $suffix
-  run deno run "$base/JavaScript/program.js" && eval $suffix
-  run deno run "$base/TypeScript/program.ts" && eval $suffix
-  run python3 "$base/Python/program.py" && eval $suffix
-  run php "$base/PHP/program.php" && eval $suffix
-  run julia "$base/Julia/Program.jl" && eval $suffix
-  run dotnet run --project "$base/CSharp/Calculator" && eval $suffix
+  try node "$base/JavaScript/program.js" && eval $suffix
+  try deno run "$base/JavaScript/program.js" && eval $suffix
+  try deno run "$base/TypeScript/program.ts" && eval $suffix
+  try python3 "$base/Python/program.py" && eval $suffix
+  try php "$base/PHP/program.php" && eval $suffix
+  try julia "$base/Julia/Program.jl" && eval $suffix
+  try dotnet run --project "$base/CSharp/Calculator" && eval $suffix
 
-  if [ -d "$JAVA_HOME/bin" ]; then run_no_check "$base/Java/build-and-run.sh" && eval $suffix; fi
+  which fpc > /dev/null && run "$base/ObjectPascal/build-and-run.sh" && eval $suffix
+  [ -d "$JAVA_HOME/bin" ] && run "$base/Java/build-and-run.sh" && eval $suffix
+
+  popd > /dev/null
+
+
+  pushd "$base/Go" > /dev/null
+  try go run . && eval $suffix
+  popd > /dev/null
+
 
   echo "The program could not be started because no suitable runtime environment is installed."
-  popd > /dev/null
   pause
   exit 1
 }
 
-pause() {
-  read -p "[Press any key!] "
+try() {
+  which "$1" > /dev/null
+  [ $? -ne 0 ] && return 1
+  run $@
 }
 
 run() {
-  which "$1" > /dev/null
-  if [ $? -ne 0 ]; then return 1; fi
-  run_no_check $@
-}
-
-run_no_check() {
   if [ -z "$args" ]; then
     echo
     echo "> $@"
@@ -53,6 +54,10 @@ run_no_check() {
 
   $@ "${args[@]}"
   return 0
+}
+
+pause() {
+  read -p "[Press any key!] "
 }
 
 main

@@ -2,57 +2,77 @@
 
 #:----------------------------------------------------------------------------
 #:
-#:  Copyright © 2023 Steffen Liersch
+#:  Copyright © 2023-2024 Steffen Liersch
 #:  https://www.steffen-liersch.de/
 #:
 #:----------------------------------------------------------------------------
 
 main() {
-  suffix='echo "Test failed"; popd > /dev/null; pause; exit 1'
   base=$(readlink -f "$(dirname "$0")")
 
+
   pushd "$base/Go" > /dev/null
-  run go test || eval $suffix
+  try go test || error
   popd > /dev/null
 
+
   pushd "$base/Java" > /dev/null
-  run mvn --quiet package || eval $suffix
+  try mvn --quiet package || error
   popd > /dev/null
+
 
   pushd "$base" > /dev/null
 
-  run node --no-warnings "$base/JavaScript/tests.js" || eval $suffix
-  run deno run "$base/JavaScript/tests.js" || eval $suffix
-  run deno run "$base/TypeScript/tests.ts" || eval $suffix
-  run dotnet test "$base/CSharp" || eval $suffix
-  run julia "$base/Julia/Tests.jl" || eval $suffix
-  run php "$base/PHP/tests.php" || eval $suffix
-  run python3 "$base/Python/tests.py" || eval $suffix
+  check fpc && { run "$base/ObjectPascal/build-and-test.sh" --nowait || error; }
+
+  try node --no-warnings "$base/JavaScript/tests.js" || error
+  try deno run "$base/JavaScript/tests.js" || error
+  try deno run "$base/TypeScript/tests.ts" || error
+  try dotnet test "$base/CSharp" || error
+  try julia "$base/Julia/Tests.jl" || error
+  try php "$base/PHP/tests.php" || error
+  try python3 "$base/Python/tests.py" || error
+
+  popd > /dev/null
+
 
   echo "All the tests performed were successful."
-  popd > /dev/null
   pause
   exit 0
 }
 
-pause() {
-  read -p "[Press any key!] "
+try() {
+  check $1 || return 0
+  run $@
 }
 
 run() {
+  echo "> $@"
+  $@
+  [ $? -ne 0 ] && return 1
+
+  echo
+  return 0
+}
+
+check() {
   echo ================ Testing $1 ================
   echo
 
   which "$1" > /dev/null
-  if [ $? -ne 0 ]; then echo "$1 is not installed"; echo; echo; return 0; fi
-
-  echo "> $@"
-
-  $@
-  if [ $? -ne 0 ]; then return 1; fi
-
-  echo
+  if [ $? -ne 0 ]; then echo "$1 is not installed"; echo; echo; return 1; fi
   return 0
+}
+
+error() {
+  echo "Test failed"
+  popd > /dev/null
+  pause
+  exit 1
+}
+
+pause() {
+  read -p "[Press any key!] "
 }
 
 main

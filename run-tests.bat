@@ -1,6 +1,6 @@
 ::----------------------------------------------------------------------------
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 ::----------------------------------------------------------------------------
@@ -10,40 +10,47 @@ goto main
 
 
 :main
-set suffix= ^|^| (echo Test failed ^& popd ^& pause ^& exit /B 1)
+
 set base=%~dp0
 
+
 pushd "%base%Go"
-call :run go test %suffix%
+call :try go test || goto error
 popd
 
+
 pushd "%base%Java"
-call :run mvn --quiet package %suffix%
+call :try mvn --quiet package || goto error
 popd
+
 
 pushd "%base%"
 
-call :run node --no-warnings "%base%JavaScript\tests.js" %suffix%
-call :run deno run "%base%JavaScript\tests.js" %suffix%
-call :run deno run "%base%TypeScript\tests.ts" %suffix%
-call :run dotnet test "%base%CSharp" %suffix%
-call :run julia "%base%Julia\Tests.jl" %suffix%
-call :run php "%base%PHP\tests.php" %suffix%
-call :run py "%base%Python\tests.py" %suffix%
+call :check fpc && (call :run "%base%ObjectPascal\build-and-test.bat" --nowait || goto error)
+
+call :try node --no-warnings "%base%JavaScript\tests.js" || goto error
+call :try deno run "%base%JavaScript\tests.js" || goto error
+call :try deno run "%base%TypeScript\tests.ts" || goto error
+call :try dotnet test "%base%CSharp" || goto error
+call :try julia "%base%Julia\Tests.jl" || goto error
+call :try php "%base%PHP\tests.php" || goto error
+call :try py "%base%Python\tests.py" || goto error
+
+popd
+
 
 echo All the tests performed were successful.
-popd
 pause
 exit /B 0
 
 
+:try
+
+call :check %1 || exit /B 0
+goto run
+
+
 :run
-
-echo ================ Testing %1 ================
-echo.
-
-where /Q %1
-if not %ERRORLEVEL%==0 (echo %1 is not installed & echo. & echo. & exit /B 0)
 
 echo ^> %*
 cmd /C %*
@@ -51,3 +58,21 @@ if not %ERRORLEVEL%==0 exit /B 1
 
 echo.
 exit /B 0
+
+
+:check
+
+echo ================ Testing %1 ================
+echo.
+
+where /Q %1
+if not %ERRORLEVEL%==0 (echo %1 is not installed & echo. & echo. & exit /B 1)
+exit /B 0
+
+
+:error
+
+echo Test failed
+popd
+pause
+exit /B 1

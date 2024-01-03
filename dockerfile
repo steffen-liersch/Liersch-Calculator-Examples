@@ -1,11 +1,12 @@
 #:----------------------------------------------------------------------------
 #:
-#:  Copyright © 2023 Steffen Liersch
+#:  Copyright © 2023-2024 Steffen Liersch
 #:  https://www.steffen-liersch.de/
 #:
 #:----------------------------------------------------------------------------
 
-FROM alpine:latest
+FROM frolvlad/alpine-fpc
+#FROM alpine:latest
 
 # TODO: Add dotnet8-sdk
 RUN apk --update add bash file mc nano deno nodejs go php python3 && rm -rf /var/cache/apk/*
@@ -34,7 +35,9 @@ ENV PATH="${PATH}:/julia-1.9.4/bin"
 RUN echo 'import Pkg; Pkg.add("JSON")' | julia
 
 COPY . /calculator
-
+RUN chmod +x /calculator/*.sh
+RUN chmod +x /calculator/**/*.sh
+ 
 RUN echo -e "#!/bin/bash\n\necho -e \"\\n\$DOCKER_IMAGE_INFO\"\nuname -sr\necho" > /root/.bashrc
 RUN chmod +x /root/.bashrc 
 ENV ENV="/root/.bashrc"

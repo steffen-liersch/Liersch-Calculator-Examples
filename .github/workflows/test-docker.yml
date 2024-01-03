@@ -1,0 +1,23 @@
+name: Automatic Unit Testing
+run-name: Automatic Unit Testing (Docker)
+on: [push]
+jobs:
+  Unit-Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Workflow triggered by a ${{ github.event_name }} event
+        run: echo ""
+
+      - name: Operating system is ${{ runner.os }}
+        run: echo ""
+
+      - name: Check out repository code from ${{ github.repository }}
+        uses: actions/checkout@v3
+
+      - name: Call run-tests.sh in Docker image
+        run: |
+          docker build -t test-image:latest .
+          docker run test-image:latest /calculator/run-tests.sh
+
+      - name: Job status is ${{ job.status }}
+        run: echo ""
