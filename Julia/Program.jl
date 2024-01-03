@@ -2,7 +2,7 @@
 
 #:----------------------------------------------------------------------------
 #:
-#:  Copyright © 2023 Steffen Liersch
+#:  Copyright © 2023-2024 Steffen Liersch
 #:  https://www.steffen-liersch.de/
 #:
 #:----------------------------------------------------------------------------
@@ -16,7 +16,7 @@ function runui()::Nothing
   println("==================")
   println()
 
-  println("Copyright © 2023 Steffen Liersch")
+  println("Copyright © 2023-2024 Steffen Liersch")
   println("https://www.steffen-liersch.de/")
   println()
 

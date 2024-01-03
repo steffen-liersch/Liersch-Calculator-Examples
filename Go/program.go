@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -20,7 +20,7 @@ func runUI() {
 	fmt.Println("==================")
 	fmt.Println()
 
-	fmt.Println("Copyright © 2023 Steffen Liersch")
+	fmt.Println("Copyright © 2023-2024 Steffen Liersch")
 	fmt.Println("https://www.steffen-liersch.de/")
 	fmt.Println()
 

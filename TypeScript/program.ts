@@ -2,7 +2,7 @@
 
 /*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -17,7 +17,7 @@ function runUI(): void
   console.log('==================');
   console.log();
 
-  console.log('Copyright © 2023 Steffen Liersch');
+  console.log('Copyright © 2023-2024 Steffen Liersch');
   console.log('https://www.steffen-liersch.de/');
   console.log();
 

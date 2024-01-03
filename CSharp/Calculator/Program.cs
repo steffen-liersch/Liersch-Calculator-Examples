@@ -1,6 +1,6 @@
 ﻿/*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -19,7 +19,7 @@ static class Program
     Console.WriteLine("==================");
     Console.WriteLine();
 
-    Console.WriteLine("Copyright © 2023 Steffen Liersch");
+    Console.WriteLine("Copyright © 2023-2024 Steffen Liersch");
     Console.WriteLine("https://www.steffen-liersch.de/");
     Console.WriteLine();
 

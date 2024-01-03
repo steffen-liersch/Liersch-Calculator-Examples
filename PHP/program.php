@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php /*--------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -17,7 +17,7 @@ function runUI(): void
   echo "==================\n";
   echo "\n";
 
-  echo "Copyright © 2023 Steffen Liersch\n";
+  echo "Copyright © 2023-2024 Steffen Liersch\n";
   echo "https://www.steffen-liersch.de/\n";
   echo "\n";
 

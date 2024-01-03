@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -23,7 +23,7 @@ final class Program
     wr.println("==================");
     wr.println();
 
-    wr.println("Copyright © 2023 Steffen Liersch");
+    wr.println("Copyright © 2023-2024 Steffen Liersch");
     wr.println("https://www.steffen-liersch.de/");
     wr.println();
 

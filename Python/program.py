@@ -2,7 +2,7 @@
 
 #:----------------------------------------------------------------------------
 #:
-#:  Copyright © 2023 Steffen Liersch
+#:  Copyright © 2023-2024 Steffen Liersch
 #:  https://www.steffen-liersch.de/
 #:
 #:----------------------------------------------------------------------------
@@ -18,7 +18,7 @@ def run_ui() -> None:
   print('==================')
   print()
 
-  print('Copyright © 2023 Steffen Liersch')
+  print('Copyright © 2023-2024 Steffen Liersch')
   print('https://www.steffen-liersch.de/')
   print()
 
