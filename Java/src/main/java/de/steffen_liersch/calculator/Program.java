@@ -14,18 +14,18 @@ import java.util.List;
 final class Program
 {
   static Console console = System.console();
-  static PrintWriter wr = console.writer();
+  static PrintWriter writer = new PrintWriter(console.writer(), true);
 
   static void runUI()
   {
-    wr.println();
-    wr.println("Liersch Calculator (Java)");
-    wr.println("==================");
-    wr.println();
+    writer.println();
+    writer.println("Liersch Calculator (Java)");
+    writer.println("==================");
+    writer.println();
 
-    wr.println("Copyright © 2023-2024 Steffen Liersch");
-    wr.println("https://www.steffen-liersch.de/");
-    wr.println();
+    writer.println("Copyright © 2023-2024 Steffen Liersch");
+    writer.println("https://www.steffen-liersch.de/");
+    writer.println();
 
     var calculator = new Calculator();
 
@@ -39,7 +39,7 @@ final class Program
       if(s != null && s.length() > 0)
       {
         for(String x : calculator.calculateAndFormat(s))
-          wr.println(x);
+          writer.println(x);
         exitState = 0;
       }
       else
@@ -47,11 +47,11 @@ final class Program
         if(exitState > 0)
           break;
 
-        wr.println("Press [Enter] again to exit.");
+        writer.println("Press [Enter] again to exit.");
         exitState++;
       }
 
-      wr.println();
+      writer.println();
     }
   }
 
@@ -62,7 +62,7 @@ final class Program
     {
       List<String> x = calculator.calculateAndFormat(a, "");
       int c = x.size();
-      wr.println(c > 0 ? x.get(c - 1) : "");
+      writer.println(c > 0 ? x.get(c - 1) : "");
     }
   }
 
