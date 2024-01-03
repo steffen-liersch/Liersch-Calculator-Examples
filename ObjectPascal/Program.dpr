@@ -1,13 +1,11 @@
 (*--------------------------------------------------------------------------*]
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 [*--------------------------------------------------------------------------*)
 
 {$I Options.inc}
-
-{$APPTYPE CONSOLE}
 
 program App;
 
@@ -27,7 +25,7 @@ begin
   WriteLn('==================');
   WriteLn;
 
-  WriteLn('Copyright '#$00A9' 2023 Steffen Liersch');
+  WriteLn('Copyright '#$00A9' 2023-2024 Steffen Liersch');
   WriteLn('https://www.steffen-liersch.de/');
   WriteLn;
 

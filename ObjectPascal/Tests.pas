@@ -1,13 +1,11 @@
 (*--------------------------------------------------------------------------*]
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 [*--------------------------------------------------------------------------*)
 
 {$I Options.inc}
-
-{$APPTYPE CONSOLE}
 
 program Tests;
 
