@@ -53,6 +53,7 @@ goto run
 :run
 
 echo ^> %*
+echo.
 cmd /C %*
 if not %ERRORLEVEL%==0 exit /B 1
 
@@ -72,7 +73,7 @@ exit /B 0
 
 :error
 
-echo Test failed
 popd
+echo Test failed
 pause
 exit /B 1

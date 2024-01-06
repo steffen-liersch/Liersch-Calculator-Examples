@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -9,15 +9,12 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
 	"runtime"
 )
 
 func runTests() bool {
-	fmt.Println()
-
 	_, file, _, ok := runtime.Caller(0)
 	if !ok {
 		panic("No caller information")
@@ -34,7 +31,5 @@ func runTests() bool {
 		panic(err)
 	}
 
-	ok = performTests(tests)
-	fmt.Println()
-	return ok
+	return performTests(tests)
 }

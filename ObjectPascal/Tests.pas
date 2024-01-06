@@ -36,18 +36,14 @@ function RunTests: boolean;
 var
   Tests: TJSONArray;
   JSON: string;
-  OK: boolean;
 begin
-  WriteLn;
   JSON := LoadTests;
   Tests := GetJSON(JSON) as TJSONArray;
   try
-    OK := PerformTests(Tests);
+    Result := PerformTests(Tests);
   finally
     Tests.Free;
   end;
-  WriteLn;
-  Result := OK;
 end;
 
 begin

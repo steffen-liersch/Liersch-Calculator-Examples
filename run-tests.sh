@@ -48,6 +48,7 @@ try() {
 
 run() {
   echo "> $@"
+  echo
   $@
   [ $? -ne 0 ] && return 1
 
@@ -65,8 +66,8 @@ check() {
 }
 
 error() {
-  echo "Test failed"
   popd > /dev/null
+  echo "Test failed"
   pause
   exit 1
 }

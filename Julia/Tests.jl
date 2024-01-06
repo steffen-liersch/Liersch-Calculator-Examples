@@ -2,7 +2,7 @@
 
 #:----------------------------------------------------------------------------
 #:
-#:  Copyright © 2023 Steffen Liersch
+#:  Copyright © 2023-2024 Steffen Liersch
 #:  https://www.steffen-liersch.de/
 #:
 #:----------------------------------------------------------------------------
@@ -18,12 +18,9 @@ include("Helpers.jl")
 using JSON
 
 function runtests()::Bool
-  println()
   n = joinpath(dirname(@__FILE__), "../Unit-Testing/tests.json")
   tests = JSON.parsefile(n)
-  ok = performtests(tests)
-  println()
-  return ok
+  return performtests(tests)
 end
 
 if isentrypoint(@__FILE__)
