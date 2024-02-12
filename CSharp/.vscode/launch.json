@@ -21,11 +21,11 @@
       // Operating system specific settings
       "linux": {
         "console": "integratedTerminal", // https://aka.ms/VSCode-CS-LaunchJson-Console
-        "program": "${workspaceFolder}/Calculator/bin/Debug/Calculator",
+        "program": "${workspaceFolder}/Calculator/bin/Debug/Calculator.dll",
       },
       "windows": {
         "console": "externalTerminal", // https://aka.ms/VSCode-CS-LaunchJson-Console
-        "program": "${workspaceFolder}/Calculator/bin/Debug/Calculator.exe",
+        "program": "${workspaceFolder}/Calculator/bin/Debug/Calculator.dll",
       },
     },
 
