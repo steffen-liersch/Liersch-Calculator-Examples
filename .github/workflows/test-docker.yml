@@ -12,7 +12,7 @@ jobs:
         run: echo ""
 
       - name: Check out repository code from ${{ github.repository }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Call run-tests.sh in Docker image
         run: |

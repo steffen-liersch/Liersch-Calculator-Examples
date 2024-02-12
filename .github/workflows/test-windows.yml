@@ -14,33 +14,33 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.10.0
+          node-version: 20.11.0
 
       - name: Set up Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: 1.39.0
+          deno-version: 1.40.4
 
       - name: Set up .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
-          go-version: 1.21.5
+          go-version: 1.22.0
 
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21.0.1
+          java-version: 21.0.2
 
       - name: Set up Julia
         uses: julia-actions/setup-julia@v1
         with:
-          version: 1.9.4
+          version: 1.10.0
 
       - name: Set up Julia package
         run: echo 'import Pkg; Pkg.add("JSON")' | julia
@@ -48,16 +48,16 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.2
+          php-version: 8.3.2
           extensions: 
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11.4
+          python-version: 3.12.2
 
       - name: Check out repository code from ${{ github.repository }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Call run-tests.bat
         run: cmd /C run-tests.bat
