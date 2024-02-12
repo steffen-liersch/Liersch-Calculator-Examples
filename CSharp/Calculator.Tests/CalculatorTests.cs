@@ -1,6 +1,6 @@
 ﻿/*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -32,7 +32,7 @@ public sealed class CalculatorTests
       foreach(string expr in array)
       {
         IList<string> lines = calculator.CalculateAndFormat(expr, "");
-        if(!AssertEqual(output, lines))
+        if(!AssertEqual(output, lines)) // !output.SequenceEqual(lines) should be used instead!
           errorCount++;
         testCount++;
       }
