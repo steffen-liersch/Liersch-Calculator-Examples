@@ -1,6 +1,6 @@
 ﻿/*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -118,7 +118,7 @@ sealed class Calculator
       char op = GetOperator(i++);
       double v2 = GetValue(i++);
 
-      if(operators.IndexOf(op) >= 0)
+      if(operators.Contains(op))
       {
         v2 = fn(op, v1, v2);
 
@@ -165,7 +165,7 @@ sealed class Calculator
     if(s.Length == 1)
     {
       char op = s[0];
-      if("+-*/%^".IndexOf(op) >= 0)
+      if("+-*/%^".Contains(op))
         return op;
     }
 

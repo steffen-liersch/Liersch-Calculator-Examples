@@ -1,9 +1,0 @@
-{
-  "__Comment": "The file is used to format C#. After changing this file VS Code must be restarted!",
-  "FormattingOptions": {
-    "OrganizeImports": true,
-    "SpaceAfterControlFlowStatementKeyword": false,
-    "TabSize": 2,
-    "IndentationSize": 2
-  }
-}

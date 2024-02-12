@@ -12,11 +12,6 @@
     "json.format.enable": true,
     "json.format.keepLines": true,
 
-    // The following settings are required for
-    // omnisharp.json to be considered (C# support).
-    "dotnet.server.useOmnisharp": true,
-    "omnisharp.enableEditorConfigSupport": false,
-
     // Project-specific files to exclude
     "files.exclude": {
       "**/.vs": true,
@@ -29,9 +24,7 @@
   "extensions": {
     "recommendations": [
       "dotjoshjohnson.xml",
-      "formulahendry.dotnet-test-explorer",
-      //"ms-dotnettools.csdevkit",
-      "ms-dotnettools.csharp",
+      "ms-dotnettools.csdevkit",
       "sonarsource.sonarlint-vscode",
       "streetsidesoftware.code-spell-checker",
     ],
