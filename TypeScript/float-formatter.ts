@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -21,5 +21,5 @@ class FloatFormatter
       .replace(/\.?0+($|(?=E))/, '');
   }
 
-  private _precision?: number;
+  private readonly _precision?: number;
 }
