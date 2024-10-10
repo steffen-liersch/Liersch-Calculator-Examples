@@ -9,7 +9,7 @@
 
 export { runTests };
 import { performTests } from './calculator-tests.ts';
-import tests from '../Unit-Testing/tests.json' assert { type: 'json' };
+import tests from '../Unit-Testing/tests.json' with { type: 'json' };
 
 function runTests(): boolean
 {

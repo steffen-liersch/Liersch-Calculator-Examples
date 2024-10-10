@@ -10,7 +10,7 @@
 export { runTests };
 import { performTests } from './calculator-tests.js';
 import { isDeno, isNode } from './environment.js';
-import tests from '../Unit-Testing/tests.json' assert { type: 'json' };
+import tests from '../Unit-Testing/tests.json' with { type: 'json' };
 
 function runTests()
 {
