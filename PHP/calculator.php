@@ -1,6 +1,6 @@
 <?php /*--------------------------------------------------------------------*\
 ::
-::  Copyright © 2023 Steffen Liersch
+::  Copyright © 2023-2024 Steffen Liersch
 ::  https://www.steffen-liersch.de/
 ::
 \*--------------------------------------------------------------------------*/
@@ -74,7 +74,7 @@ final class Calculator
     $this->steps = [];
     $this->matches = [];
 
-    preg_match_all($this->re, $expression, $temp, PREG_SET_ORDER);
+    preg_match_all(self::$re, $expression, $temp, PREG_SET_ORDER);
     $c = count($temp);
     if ($c <= 0)
       return null;
@@ -240,7 +240,7 @@ final class Calculator
     }
   }
 
-  private string $re = '/\d+(\.\d+)?|[A-Za-z]+|[+\-*\/%^()]|[^\dA-Za-z+\-*\/%^()\s]+/';
+  private static string $re = '/\d+(\.\d+)?|[A-Za-z]+|[+\-*\/%^()]|[^\dA-Za-z+\-*\/%^()\s]+/';
   private FloatFormatter $formatter;
   private array $matches = [];
   private array $steps = [];
